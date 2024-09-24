@@ -1,0 +1,23 @@
+module tb_bi_buf();
+
+wire a,b;
+reg cntrl;
+reg temp_a, temp_b;
+
+// instantiation 
+bi_buf m1(.cntrl(cntrl), .a(a), .b(b));
+
+assign temp_a = a;
+assign temp_b = b;
+
+initial
+begin
+cntrl = 1'b1; temp_a=1'b1; temp_b='zz;
+#10
+cnrtl = 1'b0; temp_b=1'b1;temp_a='zz;
+end
+
+endmodule
+
+
+
